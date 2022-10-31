@@ -29,5 +29,29 @@ kingbase_session_state tag 介绍
 | host     | db host     |
 
 
+## 指标预览
 
+```
+# HELP kingbase_session_state kingbase state
+# TYPE kingbase_session_state gauge
+kingbase_session_state{datid="12135",datname="test",username="system",app_name="KStudio",state="null",host="172.31.24.21",} 4.0
+kingbase_session_state{datid="12135",datname="test",username="datakit",app_name="JDBC",state="active",host="172.31.24.21",} 1.0
+kingbase_session_state{datid="12135",datname="test",username="datakit",app_name="JDBC",state="idle",host="172.31.24.21",} 19.0
+kingbase_session_state{datid="12135",datname="test",username="system",app_name="None",state="null",host="172.31.24.21",} 2.0
+# HELP kingbase_db_mode kingbase mode
+# TYPE kingbase_db_mode gauge
+kingbase_db_mode{host="172.31.24.21",} 1.0
+# HELP kingbase_db_survival kingbase survival
+# TYPE kingbase_db_survival gauge
+kingbase_db_survival{host="172.31.24.21",} 1.0
+# HELP kingbase_session_user_total kingbase session user total
+# TYPE kingbase_session_user_total gauge
+kingbase_session_user_total{username="system",host="172.31.24.21",} 6.0
+kingbase_session_user_total{username="datakit",host="172.31.24.21",} 20.0
+# HELP kingbase_session_state_total kingbase state total
+# TYPE kingbase_session_state_total gauge
+kingbase_session_state_total{state="active",host="172.31.24.21",} 1.0
+kingbase_session_state_total{state="null",host="172.31.24.21",} 6.0
+kingbase_session_state_total{state="idle",host="172.31.24.21",} 19.0
+```
 
