@@ -1,0 +1,21 @@
+
+db:
+  host: localhost
+  port: 54321
+  dbName: test
+  username: datakit
+  password: datakit
+spring:
+  datasource:
+    driver-class-name: com.kingbase8.Driver
+    url: jdbc:kingbase8://${db.host}:${db.port}/${db.dbName}
+    username: ${db.username}
+    password: ${db.password}
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.lr
+
+interval: 10
+server:
+  port: 9980

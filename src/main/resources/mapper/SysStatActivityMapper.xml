@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.kingbase.exporter.dao.SysStatActivityMapper">
+
+    <resultMap id="SysStatActivityResult" type="SysStatActivity">
+        <result column="datid" property="datid" />
+        <result column="datname" property="datname" />
+        <result column="pid" property="pid" />
+        <result column="usesysid" property="usesysid" />
+        <result column="usename" property="username" />
+        <result column="application_name" property="originAppName" />
+        <result column="client_addr" property="clientIp" />
+        <result column="client_hostname" property="clientHost" />
+        <result column="client_port" property="clientPort" />
+        <result column="backend_start" property="bStart" />
+        <result column="xact_start" property="xStart" />
+        <result column="query_start" property="qStart" />
+        <result column="state_change" property="sChange" />
+        <result column="wait_event_type" property="wait_event_type" />
+        <result column="state" property="state" />
+        <result column="query" property="query" />
+    </resultMap>
+
+    <select id="selectState" resultMap="SysStatActivityResult">
+        select * from  sys_stat_activity where datid is not null
+    </select>
+
+    <select id="selectMode" resultType="java.lang.String">
+        show database_mode
+    </select>
+</mapper>
